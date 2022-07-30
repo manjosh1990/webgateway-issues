@@ -1,0 +1,12 @@
+server:
+  port: 9000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        #Route Mapping
+        - id: restService
+          uri: http://localhost:8080/
+          predicates:
+           - Path=/cms-service/webapi/**
